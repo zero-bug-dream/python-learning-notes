@@ -1,0 +1,21 @@
+# ============================================
+# Python 学习项目依赖
+# 安装: pip install -r requirements.txt
+# ============================================
+
+# ---- 第三章 · AI 应用 ----
+openai>=1.0.0          # 调用 DeepSeek / OpenAI 大模型 API
+streamlit>=1.30.0      # AI 伴侣 Web 界面
+
+# ---- 第四章 · 网络机器人(爬虫) ----
+requests>=2.31.0       # 发送 HTTP 请求
+lxml>=5.0.0            # XPath 网页解析
+
+# ---- 第五章 · 数据分析 ----
+pandas>=2.0.0          # 数据处理
+matplotlib>=3.8.0      # 数据可视化
+jupyter>=1.0.0         # Jupyter Notebook 演示
+
+# ---- 第六章 · Web 开发 ----
+fastapi>=0.110.0       # Web 框架
+uvicorn>=0.27.0        # ASGI 服务器

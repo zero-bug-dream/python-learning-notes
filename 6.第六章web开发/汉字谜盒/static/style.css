@@ -1,0 +1,305 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1e1e2f;
+    color: #e0e0ff;
+    font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* 顶部导航 */
+.top-navbar {
+    height: 56px;
+    background-color: #2b2d42;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    border-bottom: 1px solid #44466a;
+}
+
+.top-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo-icon {
+    font-size: 20px;
+}
+
+.logo-text {
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.top-center .project-title {
+    font-size: 18px;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.btn-top-action {
+    background-color: #7b61ff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn-top-action:hover {
+    background-color: #6950d8;
+}
+
+/* 主体三栏布局 */
+.main-layout {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+}
+
+/* 左侧控制台 */
+.left-sidebar {
+    width: 210px;
+    background-color: #25273d;
+    border-right: 1px solid #44466a;
+    padding: 16px;
+    overflow-y: auto;
+}
+
+.sidebar-title {
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 16px;
+    color: #ffffff;
+}
+
+.control-block {
+    margin-bottom: 14px;
+}
+
+.control-label {
+    font-size: 13px;
+    color: #b8b8d4;
+    margin-bottom: 6px;
+}
+
+.record-list {
+    background-color: #2f314a;
+    border-radius: 6px;
+    padding: 8px;
+}
+
+.record-item {
+    font-size: 13px;
+    padding: 4px 6px;
+    color: #d8d8ff;
+}
+
+.game-select {
+    width: 100%;
+    height: 36px;
+    background-color: #2f314a;
+    color: #d8d8ff;
+    border: 1px solid #44466a;
+    border-radius: 6px;
+    padding: 0 8px;
+    font-size: 14px;
+}
+
+.btn-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 16px;
+}
+
+.btn-control {
+    width: 100%;
+    height: 38px;
+    background-color: #7b61ff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn-control:hover {
+    background-color: #6950d8;
+}
+
+/* 中间聊天区 */
+.chat-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #1e1e2f;
+}
+
+.chat-header {
+    height: 50px;
+    background-color: #2b2d42;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 18px;
+    border-bottom: 1px solid #44466a;
+}
+
+.chat-header span:first-child {
+    font-size: 17px;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.header-subtitle {
+    font-size: 13px;
+    color: #9191b5;
+}
+
+.chat-box {
+    flex: 1;
+    padding: 18px;
+    overflow-y: auto;
+    background-image: radial-gradient(circle at center, rgba(123, 97, 255, 0.08) 0%, transparent 60%);
+}
+
+.msg-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 16px;
+    align-items: flex-end;
+}
+
+.msg-ai {
+    justify-content: flex-start;
+}
+
+.msg-user {
+    justify-content: flex-end;
+}
+
+.avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #7b61ff;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.bubble {
+    max-width: 70%;
+    padding: 12px 16px;
+    border-radius: 12px;
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+.ai-bubble {
+    background-color: #3a3c5e;
+    color: #e8e8ff;
+    border-bottom-left-radius: 2px;
+}
+
+.user-bubble {
+    background-color: #7b61ff;
+    color: #ffffff;
+    border-bottom-right-radius: 2px;
+}
+
+.input-bar {
+    display: flex;
+    gap: 10px;
+    padding: 12px 18px;
+    background-color: #25273d;
+    border-top: 1px solid #44466a;
+}
+
+#chatInput {
+    flex: 1;
+    height: 42px;
+    background-color: #2f314a;
+    color: #ffffff;
+    border: 1px solid #44466a;
+    border-radius: 8px;
+    padding: 0 14px;
+    font-size: 15px;
+    outline: none;
+}
+
+#chatInput::placeholder {
+    color: #9191b5;
+}
+
+.btn-send {
+    width: 72px;
+    height: 42px;
+    background-color: #7b61ff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn-send:hover {
+    background-color: #6950d8;
+}
+
+/* 右侧说明面板 */
+.right-sidebar {
+    width: 250px;
+    background-color: #25273d;
+    border-left: 1px solid #44466a;
+    padding: 18px;
+    overflow-y: auto;
+}
+
+.right-panel h3 {
+    font-size: 16px;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.right-panel h4 {
+    font-size: 14px;
+    color: #d8d8ff;
+    margin: 16px 0 8px;
+}
+
+.right-panel p {
+    font-size: 13px;
+    color: #b8b8d4;
+    line-height: 1.6;
+}
+
+.right-panel ul {
+    padding-left: 18px;
+}
+
+.right-panel li {
+    font-size: 13px;
+    color: #b8b8d4;
+    line-height: 1.7;
+}

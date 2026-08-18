@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>汉字谜盒</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="app-container">
+
+    <!-- 顶部导航栏 -->
+    <header class="top-navbar">
+        <div class="top-left">
+            <span class="logo-icon">🧩</span>
+            <span class="logo-text">汉字谜盒</span>
+        </div>
+        <div class="top-center">
+            <span class="project-title">汉字谜盒</span>
+        </div>
+        <div class="top-right">
+            <button class="btn-top-action">新建游戏</button>
+        </div>
+    </header>
+
+    <div class="main-layout">
+
+        <!-- 左侧控制台 -->
+        <aside class="left-sidebar">
+            <div class="sidebar-title">汉字谜盒控制台</div>
+
+            <div class="control-block">
+                <div class="control-label">游戏记录</div>
+                <div class="record-list" id="recordList">
+                </div>
+            </div>
+
+            <div class="control-block">
+                <div class="control-label">游戏名称</div>
+                <select class="game-select">
+                    <option>汉字谜盒</option>
+                </select>
+            </div>
+
+            <div class="control-block">
+                <div class="control-label">难度等级</div>
+                <select class="game-select">
+                    <option>普通</option>
+                    <option>困难</option>
+                </select>
+            </div>
+
+            <div class="btn-group">
+                <button class="btn-control">开始游戏</button>
+                <button class="btn-control">查看记录</button>
+            </div>
+        </aside>
+
+        <!-- 中间聊天主区域：删掉所有写死的msg-row，只保留空容器 -->
+        <main class="chat-area">
+            <div class="chat-header">
+                <span>汉字谜盒</span>
+                <span class="header-subtitle">AI字谜挑战</span>
+            </div>
+
+            <div class="chat-box" id="chatBox">
+                <!-- 所有聊天消息全部由JS调用API之后动态生成，这里不要写内容 -->
+            </div>
+
+            <div class="input-bar">
+                <input type="text" id="chatInput" placeholder="输入你的答案，或者问我要提示...">
+                <button class="btn-send">发送</button>
+            </div>
+        </main>
+
+        <!-- 右侧说明面板 -->
+        <aside class="right-sidebar">
+            <div class="right-panel">
+                <h3>游戏简介</h3>
+                <p>汉字谜盒是一款基于人工智能的字谜互动游戏，专为汉字爱好者设计。在这里，你将与AI机器人进行有趣的猜字挑战。</p>
+
+                <h4>核心玩法</h4>
+                <p>AI会随机给出一条字谜，你需要根据谜面提示猜出对应的汉字。AI会根据你的回答给出相应的反馈，并揭示最终答案。</p>
+
+                <h4>特色功能</h4>
+                <ul>
+                    <li>智能判题：AI判断答案是否正确</li>
+                    <li>贴心提示：猜错时提供线索引导</li>
+                    <li>无限挑战：每次题目随机生成</li>
+                    <li>会话记录：自动保存游戏记录</li>
+                </ul>
+
+                <h4>适合人群</h4>
+                <ul>
+                    <li>汉字文化爱好者</li>
+                    <li>语文学习辅助工具</li>
+                </ul>
+            </div>
+        </aside>
+
+    </div>
+
+</div>
+<script src="/static/app.js"></script>
+</body>
+</html>
