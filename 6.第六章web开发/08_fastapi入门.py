@@ -35,4 +35,4 @@ def get_users():
 # 启动服务 --->uvicorn :python中一个轻量级的web服务器
 if __name__ == '__main__':
     import uvicorn
-    uvicorn.run(app, host= "0.0.0.0", port = 8000)
+    uvicorn.run(app, host= "0.0.0.0", port = 8090)

@@ -11,7 +11,7 @@
 | `3.第三章.AI应用` | AI 应用 | DeepSeek 大模型 API、提示词工程、Streamlit 界面、「AI 伴侣」进化史 |
 | `4.第四章网络机器人项目` | 网络爬虫 | requests + XPath 解析、正则表达式、CSV 存储、TMDB 电影榜单爬取 |
 | `5.第五章数据分析` | 数据分析 | pandas、matplotlib、Jupyter Notebook、TMDB TOP100 榜单分析 |
-| `6.第六章web开发` | Web 开发 | 面向对象高级、FastAPI 实战、「汉字谜盒」小应用 |
+| `6.第六章web开发` | Web 开发 | 面向对象高级、FastAPI 实战、「汉字谜盒」AI 猜字谜应用 |
 
 ## ✨ 亮点项目
 
@@ -39,13 +39,15 @@ streamlit run ai_partnter5.0.py
 使用 `pandas` 清洗数据 + `matplotlib` 可视化,产出榜单数据统计图。
 
 ### 🧩 汉字谜盒(第六章)
-**FastAPI + 原生 HTML/CSS/JS** 小应用,演示前后端交互与会话管理。
+**FastAPI + 原生 HTML/CSS/JS + DeepSeek 大模型** 的 AI 猜字谜应用,演示 RESTful API、前后端交互、会话管理(创建 / 查询 / 删除)与 AI 对话记忆。
 
 ```bash
 cd "6.第六章web开发/汉字谜盒"
 python main.py
 # 浏览器打开 http://localhost:8000
 ```
+
+> ⚠️ 需要设置环境变量 `DEEPSEEK_API_KEY`(同第三章)。
 
 ## 🚀 快速开始
 

@@ -3,105 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>汉字谜盒</title>
+    <title>嘉星_汉字谜盒</title>
     <link rel="stylesheet" href="/static/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪄</text></svg>" type="image/svg+xml">
 </head>
 <body>
+    <div class="app-container">
+        <!-- 左侧控制面板 -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>🪄 汉字谜盒控制台</h2>
+            </div>
 
-<div class="app-container">
+            <!-- 分割线 -->
+            <hr class="divider">
 
-    <!-- 顶部导航栏 -->
-    <header class="top-navbar">
-        <div class="top-left">
-            <span class="logo-icon">🧩</span>
-            <span class="logo-text">汉字谜盒</span>
-        </div>
-        <div class="top-center">
-            <span class="project-title">汉字谜盒</span>
-        </div>
-        <div class="top-right">
-            <button class="btn-top-action">新建游戏</button>
-        </div>
-    </header>
+            <!-- 新建会话按钮 -->
+            <button class="btn btn-primary btn-full" id="newSessionBtn">
+                <span>✏️</span> 新建游戏
+            </button>
 
-    <div class="main-layout">
 
-        <!-- 左侧控制台 -->
-        <aside class="left-sidebar">
-            <div class="sidebar-title">汉字谜盒控制台</div>
 
-            <div class="control-block">
-                <div class="control-label">游戏记录</div>
-                <div class="record-list" id="recordList">
+            <!-- 会话历史 -->
+            <div class="session-section">
+                <h3>游戏记录</h3>
+                <div class="session-list" id="sessionList">
+                    <!-- 会话列表将动态生成 -->
                 </div>
-            </div>
-
-            <div class="control-block">
-                <div class="control-label">游戏名称</div>
-                <select class="game-select">
-                    <option>汉字谜盒</option>
-                </select>
-            </div>
-
-            <div class="control-block">
-                <div class="control-label">难度等级</div>
-                <select class="game-select">
-                    <option>普通</option>
-                    <option>困难</option>
-                </select>
-            </div>
-
-            <div class="btn-group">
-                <button class="btn-control">开始游戏</button>
-                <button class="btn-control">查看记录</button>
             </div>
         </aside>
 
-        <!-- 中间聊天主区域：删掉所有写死的msg-row，只保留空容器 -->
-        <main class="chat-area">
-            <div class="chat-header">
-                <span>汉字谜盒</span>
-                <span class="header-subtitle">AI字谜挑战</span>
+        <!-- 中间交互消息区域 -->
+        <main class="chat-container">
+            <!-- 标题栏 -->
+            <header class="chat-header">
+                <div class="header-left">
+                    <h1>🪄 汉字谜盒</h1>
+                    <span class="session-name" id="sessionName">会话名称: </span>
+                </div>
+                <div class="theme-switcher">
+                    <button class="btn btn-theme" id="themeBtn" title="切换背景色">
+                        <span>🎨</span>
+                    </button>
+                    <div class="theme-dropdown" id="themeDropdown">
+                        <div class="theme-option" data-theme="light">
+                            <span class="theme-color theme-light"></span>
+                            <span>白色</span>
+                        </div>
+                        <div class="theme-option" data-theme="dark">
+                            <span class="theme-color theme-dark"></span>
+                            <span>暗黑</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- 聊天消息区域 -->
+            <div class="chat-messages" id="chatMessages">
+                <!-- 消息将动态生成 -->
             </div>
 
-            <div class="chat-box" id="chatBox">
-                <!-- 所有聊天消息全部由JS调用API之后动态生成，这里不要写内容 -->
-            </div>
-
-            <div class="input-bar">
-                <input type="text" id="chatInput" placeholder="输入你的答案，或者问我要提示...">
-                <button class="btn-send">发送</button>
+            <!-- 输入区域 -->
+            <div class="chat-input-container">
+                <div class="chat-input-wrapper">
+                    <input type="text"
+                           class="chat-input"
+                           id="chatInput"
+                           placeholder="输入你的答案，或者问我要新题目~"
+                           autocomplete="off">
+                    <button class="btn btn-send" id="sendBtn">
+                        <span>➤</span>
+                    </button>
+                </div>
             </div>
         </main>
 
-        <!-- 右侧说明面板 -->
-        <aside class="right-sidebar">
-            <div class="right-panel">
-                <h3>游戏简介</h3>
-                <p>汉字谜盒是一款基于人工智能的字谜互动游戏，专为汉字爱好者设计。在这里，你将与AI机器人进行有趣的猜字挑战。</p>
+        <!-- 右侧游戏简介栏 -->
+        <aside class="info-sidebar">
+            <div class="info-header">
+                <h2>🪄 游戏简介</h2>
+            </div>
 
-                <h4>核心玩法</h4>
-                <p>AI会随机给出一条字谜，你需要根据谜面提示猜出对应的汉字。AI会根据你的回答给出相应的反馈，并揭示最终答案。</p>
+            <div class="info-content">
+                <div class="info-section">
+                    <p><strong>汉字谜盒 是一款基于人工智能的字谜互动游戏，专为汉字爱好者设计。在这里，你将与AI机器人进行有趣的猜字挑战！</strong></p>
+                </div>
 
-                <h4>特色功能</h4>
-                <ul>
-                    <li>智能判题：AI判断答案是否正确</li>
-                    <li>贴心提示：猜错时提供线索引导</li>
-                    <li>无限挑战：每次题目随机生成</li>
-                    <li>会话记录：自动保存游戏记录</li>
-                </ul>
+                <div class="info-section">
+                    <h3>🎮 核心玩法</h3>
+                    <p>AI会随机出一道经典字谜（如"一口咬掉牛尾巴"），你需要根据谜面提示猜出对应的汉字，AI会根据你的回答给出相应的提示，并给出最终的答案。</p>
+                </div>
 
-                <h4>适合人群</h4>
-                <ul>
-                    <li>汉字文化爱好者</li>
-                    <li>语文学习辅助工具</li>
-                </ul>
+                <div class="info-section">
+                    <h3>✨ 特色功能</h3>
+                    <ul class="feature-list">
+                        <li><strong>智能判题：</strong>AI精准判断你的答案是否正确，答对即获即时夸奖</li>
+                        <li><strong>贴心提示：</strong>猜错时提供线索引导，不会直接透露答案</li>
+                        <li><strong>无限挑战：</strong>每次出题完全随机，永不重复</li>
+                        <li><strong>会话记忆：</strong>游戏记录自动保存，随时回顾精彩对局</li>
+                    </ul>
+                </div>
+
+                <div class="info-section">
+                    <h3>🎯 适合人群</h3>
+                    <ul class="audience-list">
+                        <li>汉字文化爱好者</li>
+                        <li>语文学习辅助工具</li>
+                        <li>课堂教学演示素材</li>
+                        <li>休闲娱乐解谜玩家</li>
+                    </ul>
+                </div>
+
+                <div class="info-section footer-text">
+                    <p><strong>快来挑战你的汉字智慧，在轻松互动中感受汉字的无穷魅力！</strong></p>
+                </div>
             </div>
         </aside>
-
     </div>
 
-</div>
-<script src="/static/app.js"></script>
+    <script src="/static/app.js"></script>
 </body>
 </html>
